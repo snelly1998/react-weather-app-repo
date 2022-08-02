@@ -6,16 +6,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color:#2a3439;
+  background-color:lightgray;
 }
 
 .card{
  
-  border: 2px solid lightgray;
+  border: 2px solid black;
   min-width: 350px;
 }
 .weather-card{
-  background-color: #404040;
+  background-color: #f5f5f5;
   display:flex;
   justify-content: space-between;
  padding:15px;
@@ -30,20 +30,9 @@
 
 .weather-card-child{
   font-family: open-sans;
-  padding:25px;
-  text-align:center;
-  margin:0px;
 }
 
 .icon-container{
   position:relative;
-text-align:center;
-}
-
-p, h1, h2, h3, h4, h5, div,button{
-  color:#f5f5f5;
-}
-
-.sub.header{
-  text-align:center;
+  right: -50px;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const ForecastCard = ({time, temperature, humidity, icon, precipitation, rainSnow}) => (
+const ForecastCard = ({time, temperature, humidity, icon, precipitation}) => (
   <div class="ui card">
   <div class="content ">
     <div class="header weather-card-child"></div>
@@ -13,7 +13,7 @@ const ForecastCard = ({time, temperature, humidity, icon, precipitation, rainSno
     <div class="ui small feed">
       <div class="event">
         <div class="content">
-              <h5 className='weather-card-child'>Date: {time}</h5>
+              <h5 className='weather-card-child'>Time: {time}</h5>
          <div class="weather-card">
               <div className='weather-card-child'>
               Temperature: {temperature}℃
@@ -24,7 +24,7 @@ const ForecastCard = ({time, temperature, humidity, icon, precipitation, rainSno
        </div>
        <div class="weather-card">
               <div className='weather-card-child'>
-              {rainSnow} {precipitation} mm
+              Rain: {precipitation} mm
                </div>
                <div className='weather-card-child'>
               

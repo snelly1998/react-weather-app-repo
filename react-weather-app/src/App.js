@@ -25,15 +25,15 @@
   const [isForecast, setIsForecast] = useState(false);
 
 
-
     useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position){
     setLatitude(position.coords.latitude);
     setLongitude(position.coords.longitude);
   });
-    if (latitude != null){
+
       axios.get(`${URL}?lat=${latitude}&lon=${longitude}&units=metric&exclude=hourly,daily&appid=${API_KEY}`)
       .then((WeatherData) => {
+        console.log(WeatherData.data);
         setTemperature(WeatherData.data.main.temp);
         setSunrise(WeatherData.data.sys.sunrise);
         setSunset(WeatherData.data.sys.sunset);
@@ -41,34 +41,17 @@
         setCity(WeatherData.data.name);
         var theDate = new Date();
         setCurTime(theDate.toDateString().slice(0,-5)+','+ ' '+theDate.toTimeString().slice(0,8));
-        setIcon(WeatherData.data.weather[0].icon);
-      });}
+        setIcon(WeatherData.data.weather[0].icon)
         
-      axios.get(`${forecastURL}?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`)
-      .then((forecastData) => {
-
-        setForecast(forecastData.data.list.forecast);
-      
       });
+
+ 
     }, [latitude, longitude])
 
     return (
       <div className="main">
     <Header />
-    if ()
-    <WeatherCard temperature={ temperature }
-      humidity={humidity}
-      sunrise={sunrise}
-      sunset={sunset}
-      city={city}
-      timezone={timezone}
-      icon={icon}
-      curTime={curTime}
-    />
-
-
-
-      </div>
+<Forecast /></div>
     );
   }
 

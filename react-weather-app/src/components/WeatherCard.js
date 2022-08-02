@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const WeatherCard = ({temperature, city, humidity, sunrise, sunset, timezone, curTime, icon}) => (
         <div class="ui card">
         <div class="content ">
-
+          <div class="header weather-card-child"></div>
         </div>
         <div class="content">
           <h4 class="ui sub header">{city}</h4>
