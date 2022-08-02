@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+  color:white;
+}
+
+.Header {
+  background-color: #282c34;
+  height: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.App{
+  background-color:#282c34;
+  height: calc(100%);
+  
+}
+
+
+.Weather, .Forecast{
+width:75%;
+margin:auto;
+display: flex;
+flex-direction: column;
+min-width:400px;
+height:75%;
+justify-content: center;
+
+}
+
+.weather-container{
+  border:#f5f5f5 solid 1px;
+  justify-content: center;
+  width:auto;
+  flex-direction: column;
+  min-height:75px;
+
+  margin:0;
+}
+
+.weather-wrapper{
+  border: #f5f5f5 solid 1px;
+  flex-wrap:wrap;
+  justify-items: stretch;
+}
+
+.flex{
+  display:flex;
+}
+
+.full-height{
+  height:100%
+}
+
+.feelsLike{
+  height: 0;
+  font-size:0.6rem;
+  margin-top:10px;
+  margin-bottom:-10px;
+}
+
+.place-name{
+  min-height:75px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wind-speed{
+  font-size:.75rem;
+}
+
+.wind-container{
+  align-items: center;
+justify-content: center;
+  min-width:150px;
+  grid-template-columns: 50px 50px 50px;
+}
+
+.full-width{
+  width:100%
+}
+
+.grid-container{
+  display:grid;
+  justify-items: center;
+
+}
+
+
+
+.grid-2{
+  display:grid;
+  grid-template-columns: 50% 50%;
+
+}
+
+.weather-name{
+margin-bottom:50px;
+}
