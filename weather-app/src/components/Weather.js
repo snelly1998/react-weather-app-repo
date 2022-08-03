@@ -17,14 +17,16 @@ console.log(err);
 
 }, [props.Latitude])
 
-if (weatherData.length != 0){
+if (weatherData.length !== 0){
   console.log(weatherData);
   const weatherIcon = {
     transform: 'rotate(' + weatherData.wind.deg + 'deg)',
     width:'50px',
   };
-
-
+    
+  let date = new Date();
+  let sunrise = new Date(weatherData.sys.sunrise);
+  let sunset = new Date(weatherData.sys.sunset);
 
    return (
    <div className="Weather">
@@ -32,13 +34,13 @@ if (weatherData.length != 0){
     <div className='weather-wrapper'>
     <div className='weather-header'>
     
-    <h2 className='time'>{Date(weatherData.dt)}</h2>
+    <h2 className='time'>{date.toLocaleString()}</h2>
     <p className='wind-speed'>Wind Speed: {weatherData.wind.speed} m/s </p>
     <div className='wind-container grid-container'>
       <div></div>
       <div><p>N</p></div><div></div>
     <div><p>W</p></div>
-    <img src={weatherImg} style={weatherIcon}/>
+    <img alt="Wind Direction" src={weatherImg} style={weatherIcon}/>
     <div><p>E</p></div>
     <div></div><div><p>S</p></div>
     </div>
@@ -53,8 +55,9 @@ if (weatherData.length != 0){
     <p>Humidity: {weatherData.main.humidity} %</p>
    </div>
    </div><div className='column-row'>
-   <div className='weather-container flex half'>
-    <p>Humidity: {weatherData.main.humidity} %</p>
+   <div className='sunrise weather-container flex half'>
+    <p>Sunrise: {sunrise.toTimeString()}</p>
+    <p>Sunset: {sunset.toTimeString()}</p>
    </div>
    <div className='weather-container flex half'>
     <p>Humidity: {weatherData.main.humidity} %</p>
