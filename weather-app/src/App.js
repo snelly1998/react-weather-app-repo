@@ -2,7 +2,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import Weather from './components/Weather';
-import Forecast from './components/Forecast';
+import ForecastSlider from './components/ForecastSlider';
 function App() {
   const [isForecast, setIsForecast] = useState(false);
   const API = "087284ca65b595963c3c95afd8baff9d"
@@ -29,7 +29,7 @@ return(
   }else{
   return (
     <div className='App'>
-  <Forecast API={API}/>
+  <ForecastSlider Latitude={latitude} Longitude={longitude} API={API}/>
   <button className='changeButton' onClick={() => {setIsForecast(false)}}>
 <p>See Weather</p>
     </button>
