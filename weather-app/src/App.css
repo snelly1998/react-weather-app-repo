@@ -26,7 +26,7 @@
 }
 
 
-.Weather, .Forecast{
+.Weather, .Forecast, .Pollution{
 width:75%;
 margin:auto;
 display: flex;
@@ -36,11 +36,11 @@ justify-content: center;
 
 }
 
-.weather-header, .forecast-header{
+.weather-header, .forecast-header, .pollution-header{
 padding-bottom:20px;
 }
 
-.weather-container, .forecast-container{
+.weather-container, .forecast-container, .pollution-container{
   border:#f5f5f5 solid 1px;
   justify-content: center;
   width:auto;
@@ -50,7 +50,7 @@ border-radius: 5px;
   margin:0;
 }
 
-.weather-wrapper, .forecast-wrapper{
+.weather-wrapper, .forecast-wrapper, .pollution-wrapper{
   border: #f5f5f5 solid 1px;
   flex-wrap:wrap;
   justify-items: stretch;
@@ -154,3 +154,9 @@ margin-bottom:50px;
   width:50%;
 }
 
+.dot{
+  height:40px;
+  width:40px;
+  border-radius:50%;
+  display:inline-block;
+}

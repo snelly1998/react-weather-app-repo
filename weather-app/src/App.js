@@ -39,6 +39,7 @@ return(
     else if (isForecast == 2){
       return (
         <div className='App'>
+          <Pollution Latitude={latitude} Longitude={longitude} API={API} />
           <button className='changeButton' onClick={() => {setIsForecast(0)}}>
 <p>See Weather</p>
     </button>
