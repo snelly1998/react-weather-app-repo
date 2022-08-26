@@ -31,7 +31,7 @@ const forecast = foreData.list[sliderValue];
    return (
    <div className="ForecastSlider">
     <h1>{time}</h1>
-   <input id="dayInput" type="range" min="0" max="39" step="1" onChange={sliderChange}/>
+   <input defaultValue={0} id="dayInput" type="range" min="0" max="39" step="1" onChange={sliderChange}/>
     
    <Forecast forecast={forecast}
    time={forecast.dt_txt}/>

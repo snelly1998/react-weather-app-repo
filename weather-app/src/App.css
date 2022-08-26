@@ -36,7 +36,7 @@ justify-content: center;
 
 }
 
-.weather-header{
+.weather-header, .forecast-header{
 padding-bottom:20px;
 }
 
@@ -82,6 +82,7 @@ border-radius: 5px;
 
 .wind-speed{
   font-size:.75rem;
+  margin-bottom:10px;
 }
 
 .wind-container{
@@ -114,7 +115,7 @@ margin-bottom:50px;
 }
 
 .sunrise{
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .flex-row{
@@ -137,7 +138,7 @@ margin-bottom:50px;
   transform: rotate(-90deg);
   width:50px;
   height:15px;
-  margin-right:-10px;
+  margin-right:-20px;
   margin-left:-10px;
 }
 

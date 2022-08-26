@@ -4,7 +4,7 @@ import weatherImg from '../imgs/weatherArrow2.png'
 import Icon from './Icon'
 const Weather = (props) => {
 const [weatherData, setWeatherData] = useState([]);
-
+// This is messy as hell
 useEffect(() => {
   axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${props.Latitude}&lon=${props.Longitude}&appid=${props.API}&units=metric`).then((res)=>{
 
@@ -17,6 +17,8 @@ console.log(err);
 }, [props.Latitude])
 
 if (weatherData.length !== 0){
+
+
   const weatherIcon = {
     transform: 'rotate(' + weatherData.wind.deg + 'deg)',
     width:'50px',
@@ -28,9 +30,9 @@ if (weatherData.length !== 0){
   let precipitation = "There is currently no precipitation";
 
   if (weatherData.rain !== undefined){
-    precipitation = `${weatherData.rain['1h']}mm of rain in the past hour`;
+    precipitation = `${weatherData.rain['1h']} mm of rain in the past hour`;
   } else if (weatherData.snow !== undefined){
-    precipitation = `${weatherData.snow['1h']}mm of snow in the past hour`;
+    precipitation = `${weatherData.snow['1h']} mm of snow in the past hour`;
   }
 
    return (
@@ -40,7 +42,7 @@ if (weatherData.length !== 0){
     <div className='weather-header'>
     
     <h2 className='time'>{date.toLocaleString()}</h2>
-    
+  
     <div className="flex-row center">
       <div className="wind-wrapper">
     <p className='wind-speed'>Wind Speed: {weatherData.wind.speed} m/s </p>
@@ -55,7 +57,8 @@ if (weatherData.length !== 0){
     </div>
     </div>
     <div className='weather-icon-container'>
-<Icon icon={weatherData.weather[0].icon}/>
+<Icon icon={weatherData.weather[0].icon} text={weatherData.weather[0].description}/>
+
     </div>
     </div>
     </div>
@@ -70,7 +73,7 @@ if (weatherData.length !== 0){
     <progress className="vertical-prog" max="100" value={weatherData.clouds.all}> </progress>
    </div>
    <div className='weather-container flex'>
-    <p>Visibility: {weatherData.visibility / 1000} Km</p>
+    <p>Visibility: {weatherData.visibility / 1000} km</p>
    </div>
    </div><div className='column-row'>
    <div className='sunrise weather-container flex'>
