@@ -14,14 +14,14 @@ const Pollution = (props) => {
       
       }, [props.Latitude])
       if (pollData.length !== 0){
-      console.log(pollData);
-        if (pollData.list['0'].main.aqi == 2){
+     
+        if (pollData.list['0'].main.aqi === 2){
             aqiColor = "YellowGreen";
-        } else  if (pollData.list['0'].main.aqi == 3){
+        } else  if (pollData.list['0'].main.aqi === 3){
             aqiColor = "Yellow";
-        } else  if (pollData.list['0'].main.aqi == 4){
+        } else  if (pollData.list['0'].main.aqi === 4){
             aqiColor = "Orange";
-        } else  if (pollData.list['0'].main.aqi == 5){
+        } else  if (pollData.list['0'].main.aqi === 5){
             aqiColor = "Red";
         }
 
@@ -41,11 +41,29 @@ const Pollution = (props) => {
 <div className='pollution-container flex-row flex-center'>
     <p>Carbon Monoxide:<br/>{pollData.list['0'].components.co} μg/m3 </p>
 </div>
+<div className ='pollution-container flex-row flex-center'>
+  <p>Nitogen Monoxide:<br/> {pollData.list['0'].components.no} μg/m3</p>
+</div>
+<div className ='pollution-container flex-row flex-center'>
+  <p>Nitrogen Dioxide:<br/> {pollData.list['0'].components.no2} μg/m3</p>
+</div>
+<div className ='pollution-container flex-row flex-center'>
+  <p>Ozone: <br/> {pollData.list['0'].components.o3} μg/m3</p>
+</div>
                 </div>
                 <div className='column-row'>
-                    <div className='pollution-container'>
-
+                    <div className='pollution-container flex-row flex-center'>
+                    <p> Sulphur Dioxide: <br/> {pollData.list['0'].components.so2} μg/m3</p>
                     </div>
+                    <div className ='pollution-container flex-row flex-center'>
+                      <p> Fine Particle Matter: <br/> {pollData.list['0'].components.pm2_5} μg/m3</p>
+                    </div>
+                    <div className='pollution-container flex-row flex-center'>
+                      <p> Coarse Particle Matter: <br/> {pollData.list['0'].components.pm10} μg/m3</p>
+                      </div>
+                      <div className='pollution-container flex-row flex-center'>
+                        <p> Ammonia <br/> {pollData.list['0'].components.nh3} μg/m3</p>
+                      </div>
                 </div>
                </div>
                 </div>

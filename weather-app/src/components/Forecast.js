@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import Icon from './Icon'
 import Wind from './Wind'
+import Week from './Week'
 const Forecast = (props) => {
 
   let precipitation = 'There will be no precipitation'
@@ -51,7 +52,9 @@ let date = forecastDay.getDate();
 <p>Humidity: {props.forecast.main.humidity}%</p>
 <progress className="vertical-prog" max="100" value={props.forecast.main.humidity}> </progress>
     </div>
-
+<div className="forecast-container flex-row flex-center">
+  <Week weekday={day} />
+</div>
 </div>
 </div>
   </div>
